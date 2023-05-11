@@ -1,3 +1,5 @@
+#https://school.programmers.co.kr/learn/courses/30/lessons/1845
+
 def solution(nums):
     
     count = len(nums) #폰켓몬의 마릿수를 구한다.
