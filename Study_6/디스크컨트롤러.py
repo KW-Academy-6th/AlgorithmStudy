@@ -17,7 +17,6 @@ def solution(jobs):
             idx += 1
 
         if waitHeap:  # 대기 힙에 작업이 있는 경우
-            workFlag = 1
             duration, requestTime = heapq.heappop(waitHeap)
             count += duration
             totalTime += (count - requestTime)
