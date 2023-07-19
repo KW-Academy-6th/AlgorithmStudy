@@ -45,3 +45,26 @@ def solution(answers):
         if max_score == score[i]: answer.append(i+1)
 
     return answer
+
+
+#####################################################################################################
+
+def solution(answers):
+    answer = []
+    # 1,2,3번 수포자의 찍는 패턴
+    patterns = [
+        [1, 2, 3, 4, 5],
+        [2, 1, 2, 3, 2, 4, 2, 5],
+        [3, 3, 1, 1, 2, 2, 4, 4, 5, 5],
+    ]
+    
+    # 각 수포자의 점수를 계산
+    scores = [0, 0, 0]
+    for i, answer in enumerate(answers):
+        for j in range(3):
+            if answer == patterns[j][i % len(patterns[j])]:
+                scores[j] += 1
+                
+    # 가장 높은 점수를 가진 수포자를 찾음
+    max_score = max(scores)
+    return [i+1 for i, score in enumerate(scores) if score == max_score]
