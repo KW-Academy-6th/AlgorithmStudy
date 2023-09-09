@@ -1,0 +1,8 @@
+def solution(numbers):
+    
+    strings = [str(i).ljust(4,' ') for i in numbers]# 빈자리 만큼 빈칸을 넣어줌 
+    #     //비교를 위해 문자열로 바꿔주는 
+    strings.sort(key=lambda x: (x[0],x[1],x[2],x[3]), reverse=True)
+    strings=[str(i).strip() for i in strings]#빈칸 만들어 논거 다시없앰
+    answer = str(int(''.join(strings)))
+    return answer
